@@ -1,0 +1,28 @@
+name: bakerydemo
+type: django4
+docroot: .
+php_version: "8.0"
+webserver_type: nginx-gunicorn
+router_http_port: "80"
+router_https_port: "443"
+xdebug_enabled: false
+additional_hostnames: []
+additional_fqdns: []
+nfs_mount_enabled: false
+mutagen_enabled: false
+use_dns_when_possible: true
+composer_version: "2"
+nodejs_version: "16"
+web_environment:
+  - DJANGO_SETTINGS_MODULE=bakerydemo.settings.local
+
+
+database:
+    type: postgres
+    version: "14"
+      #webimage_extra_packages:
+      #- python3-venv
+      #- libpq-dev
+      #- build-essential
+      #- libpython3-dev
+
