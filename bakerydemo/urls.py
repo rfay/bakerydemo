@@ -10,6 +10,7 @@ from wagtail.documents import urls as wagtaildocs_urls
 from bakerydemo.search import views as search_views
 
 from .api import api_router
+from bakerydemo.mail.send_email import send_test_email
 
 urlpatterns = [
     path("django-admin/", admin.site.urls),
@@ -19,6 +20,8 @@ urlpatterns = [
     path("sitemap.xml", sitemap),
     path("api/v2/", api_router.urls),
     path("__debug__/", include(debug_toolbar.urls)),
+
+    path('send-test-email/', send_test_email, name='send_test_email'),
 ]
 
 
